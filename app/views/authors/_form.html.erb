@@ -1,0 +1,24 @@
+<%= form_for @author do |f| %>
+
+    <div class="field">
+        <%= f.label :first_name, 'First Name' %>
+        <%= f.text_field :first_name, placeholder: 'Agatha' %>
+    </div>
+    <div class="field">
+        <%= f.label :last_name, 'Last Name' %>
+        <%= f.text_field :last_name, placeholder: 'Christie' %>
+    </div>
+
+    <div class="field">
+        <%= f.label :dob, 'Date of Birth' %>
+        <%= f.text_field :dob, placeholder: '15/09/1890' %>
+    </div>
+
+    <div class="field">
+        <%= f.label :books_published, 'Books Published' %>
+        <%= f.text_field :books_published,  placeholder: '124' %>
+    </div>
+
+    <%= f.submit 'Submit', :class => 'button' %>
+
+<% end %>
