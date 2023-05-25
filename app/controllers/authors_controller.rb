@@ -9,4 +9,9 @@ class AuthorsController < ApplicationController
     def new
         @author = Author.new()
     end
+
+    def create
+        Author.create(params.require(:author).permit(:first_name, :last_name, :dob, :books_published))
+        redirect_to authors_path
+    end
 end
