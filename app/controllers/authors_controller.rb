@@ -24,4 +24,10 @@ class AuthorsController < ApplicationController
         @author.update(params.require(:author).permit(:first_name, :last_name, :dob, :books_published))
         redirect_to @author
     end
+
+    def destroy
+        @author = Author.find(params[:id])
+        @author.destroy
+        redirect_to authors_path
+    end
 end

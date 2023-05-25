@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   post "authors", to: "authors#create"
   get "authors/:id/edit", to: "authors#edit", as: :edit_author
   patch "authors/:id", to: "authors#update"
+  delete "authors/:id", to: "authors#destroy"
 end
