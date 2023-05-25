@@ -1,45 +1,48 @@
 class BooksController < ApplicationController
+    before_action :set_author
+    before_action :set_book, only: [:show, :edit, :update, :destroy]
 
     def index
-        @author = Author.find(params[:author_id])
         @books = @author.books
-        
     end
 
     def show
-        @author = Author.find(params[:author_id])
-        @book = @author.books.find(params[:id])
     end
 
     def new
-        @author = Author.find(params[:author_id])
         @book = @author.books.new
     end
 
     def create
-        @author = Author.find(params[:author_id])
-        @author.books.create(params.require(:book).permit(:name, :published, :genre, :pages))
+        @author.books.create(book_params)
         redirect_to @author
     end
 
     def edit
-        @author = Author.find(params[:author_id])
-        @book = @author.books.find(params[:id])
     end
 
     def update
-        @author = Author.find(params[:author_id])
-        @book = @author.books.find(params[:id])
 
-        @book.update(params.require(:book).permit(:name, :published, :genre, :pages))
+        @book.update(book_params)
         redirect_to @author
     end
 
     def destroy
-        @author = Author.find(params[:author_id])
-        @book = @author.books.find(params[:id])
 
         @book.destroy
         redirect_to author_path
+    end
+
+    private
+
+    def set_author
+        @author = Author.find(params[:author_id])
+    end
+    def set_book
+        @book = @author.books.find(params[:id])
+    end
+
+    def book_params
+        params.require(:book).permit(:name, :published, :genre, :pages)
     end
 end
