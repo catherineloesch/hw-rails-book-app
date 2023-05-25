@@ -18,4 +18,10 @@ class AuthorsController < ApplicationController
     def edit
         @author = Author.find(params[:id])
     end
+
+    def update
+        @author = Author.find(params[:id])
+        @author.update(params.require(:author).permit(:first_name, :last_name, :dob, :books_published))
+        redirect_to @author
+    end
 end
