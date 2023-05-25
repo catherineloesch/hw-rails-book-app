@@ -15,7 +15,9 @@
             <td><%= "#{author.dob.day}/#{author.dob.month}/#{author.dob.year}" %></td>
             <td><%= author.books_published%></td>
             
-
+          
+             <td><%= link_to "Edit Author", edit_author_path(author) %>
+  
            
           
         </tr>

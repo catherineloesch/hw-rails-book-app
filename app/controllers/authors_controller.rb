@@ -14,4 +14,8 @@ class AuthorsController < ApplicationController
         Author.create(params.require(:author).permit(:first_name, :last_name, :dob, :books_published))
         redirect_to authors_path
     end
+    
+    def edit
+        @author = Author.find(params[:id])
+    end
 end
