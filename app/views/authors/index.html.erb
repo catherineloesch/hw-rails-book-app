@@ -1,0 +1,29 @@
+<h1>All Authors:</h1>
+
+
+
+
+
+<br><br>
+    <table>
+    <tr>
+        <th>Name</th>
+        <th>Date of Birth:</th>
+        <th>Books Published</th>
+        <th>Actions</th>
+    </tr>
+    <% @authors.each do |author| %>
+        <tr>
+   
+            <td><%= (author.first_name + " " + author.last_name) %></td>
+            <td><%= "#{author.dob.day}/#{author.dob.month}/#{author.dob.year}" %></td>
+            <td><%= author.books_published%></td>
+
+           
+          
+        </tr>
+    <% end %>
+</table>
+
+
+
