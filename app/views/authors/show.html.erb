@@ -3,17 +3,20 @@
 <br>
 <br>
 
- <td><%= (@author.first_name + " " + @author.last_name) %></td>
+ <h2><%= (@author.first_name + " " + @author.last_name) %></h2>
     <%= link_to "Add New Book", new_author_book_path(@author) %>
 <br>
 <br>
 
-<h3>Books:</h3>
+
+ <h2><%= link_to "Books" , author_books_path(@author) %></h2>
+
 <ul>
     <% @books.each do |book| %>
         <li class="row">
             <strong>
                 <%= book.name %>, <%= book.published %>
+                
             </strong>
             <br>
             <em>

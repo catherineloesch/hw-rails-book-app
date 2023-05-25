@@ -1,0 +1,11 @@
+ <%= link_to "Back to Books", author_books_path(@author) %>
+
+
+ <h2> <%= @book.name %> </h2>
+ <h3> by <%= (@author.first_name + " " + @author.last_name)%></h3>
+  
+  <ul>
+    <li>Published:  <%= @book.published %></li>
+    <li>Genre:  <%= @book.genre %> </li>
+    <li>Pages: <%= @book.pages %></li>
+  </ul>
