@@ -7,15 +7,14 @@
     <% @books.each do |book| %>
         <li class="row">
             <strong>
-
-            <%= link_to (book.name), author_book_path(@author, book) %> 
-            
+            <%= link_to (book.name), author_book_path(@author, book) %>
+            </strong> -
             
             <%= book.published %>
-            </strong>
+        
             <br>
             <em>
-            <%= book.genre %>, pages: <%= book.pages %>
+            <%= book.genre %>, <%= book.pages %> pages
             </em>
             <br>
             <br>

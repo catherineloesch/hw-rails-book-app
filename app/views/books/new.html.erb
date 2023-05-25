@@ -1,24 +1,2 @@
-<h1>New Book for <%= (@author.first_name + " " + @author.last_name) %> </h1>
-
-<%= form_for [@author, @book] do |f| %>
-    <div class="field">
-        <%= f.label :name, 'Title' %>
-        <%= f.text_field :name, placeholder: 'Then There Were None' %>
-    </div>
-    <div class="field">
-        <%= f.label :published, 'Year Published' %>
-        <%= f.text_field :published, placeholder: '1939' %>
-    </div>
-    <div class="field">
-        <%= f.label :genre, 'Genre' %>
-        <%= f.text_field :genre, placeholder: 'Mystery' %>
-    </div>
-    <div class="field">
-        <%= f.label :pages, 'Pages' %>
-        <%= f.text_field :published, placeholder: '272' %>
-    </div>
-
-    <%= f.submit 'Submit', :class => 'button' %>
-
-
-<%end%>
+<h2>New Book for <%= (@author.first_name + " " + @author.last_name) %> </h2>
+<%= render "form" %>
