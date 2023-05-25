@@ -3,7 +3,6 @@
 
 
 
-
 <br><br>
     <table>
     <tr>
@@ -14,11 +13,10 @@
     </tr>
     <% @authors.each do |author| %>
         <tr>
-   
-            <td><%= (author.first_name + " " + author.last_name) %></td>
+            <td><%= link_to (author.first_name + " " + author.last_name) , author_path(author) %></td>
             <td><%= "#{author.dob.day}/#{author.dob.month}/#{author.dob.year}" %></td>
             <td><%= author.books_published%></td>
-
+            
            
           
         </tr>

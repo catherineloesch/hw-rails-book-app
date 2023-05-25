@@ -1,0 +1,27 @@
+<%= link_to "All Authors", authors_path %>
+
+<br>
+<br>
+
+ <td><%= (@author.first_name + " " + @author.last_name) %></td>
+
+
+<br>
+<br>
+
+<h3>Books:</h3>
+<ul>
+    <% @books.each do |book| %>
+        <li class="row">
+            <strong>
+                <%= book.name %>, <%= book.published %>
+            </strong>
+            <br>
+            <em>
+            <%= book.genre %>, pages: <%= book.pages %>
+            </em>
+            <br>
+            <br>
+        </li>
+    <% end %>
+</ul>
